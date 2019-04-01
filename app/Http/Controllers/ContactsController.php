@@ -83,9 +83,9 @@ class ContactsController extends Controller
      */
     public function update(Request $request, Contacts $contacts)
     {
-        //dd($request->all());
+        dd($request->all());
         //dd($request);
-        dd($request);
+        //dd($request);
     }
 
     /**

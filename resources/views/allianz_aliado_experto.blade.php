@@ -10,49 +10,47 @@
                     <p>Para ofrecerte el respaldo necesario para cuidar a los que amas, tu salud y tu patrimonio.</p>
                     <p><strong>Selecciona los productos que quieres cotizar</strong></p>
                 </div>
-                <form method="POST" action="{{ route('allianz.aliado.update') }}">
-                @csrf
-                                <div class="checkbox-salud col-md-4 col-md-offset-4">
+                {{ Form::open(array('route' => 'allianz.aliado.update', $contact->id_tomador)) }}
+                <div class="checkbox-salud col-md-4 col-md-offset-4">
                     <div class="custom-control custom-checkbox input-group-prepend">
-                      <input type="checkbox" class="custom-control-input" id="salud">
+                      <input type="checkbox" class="custom-control-input" id="salud" name="salud">
                       <label class="custom-control-label" for="salud">Seguro de Salud</label>
                       <div class="glyphicon glyphicon-info-sign"></div>
                     </div>
                 </div>
                 <div class="checkbox-vida col-md-4 col-md-offset-4">
                     <div class="custom-control custom-checkbox input-group-prepend">
-                      <input type="checkbox" class="custom-control-input" id="vida">
+                      <input type="checkbox" class="custom-control-input" id="vida" name="vida">
                       <label class="custom-control-label" for="vida">Seguro de Vida</label>
                       <div class="glyphicon glyphicon-info-sign"></div>
                     </div>
                 </div>
                 <div class="checkbox-hogar col-md-4 col-md-offset-4">
                     <div class="custom-control custom-checkbox input-group-prepend">
-                      <input type="checkbox" class="custom-control-input" id="hogar">
+                      <input type="checkbox" class="custom-control-input" id="hogar" name="hogar">
                       <label class="custom-control-label" for="hogar">Seguro de Hogar</label>
                       <div class="glyphicon glyphicon-info-sign"></div>
                     </div>
                 </div>
                 <div class="checkbox-autos col-md-4 col-md-offset-4">
                     <div class="custom-control custom-checkbox input-group-prepend">
-                      <input type="checkbox" class="custom-control-input" id="autos">
+                      <input type="checkbox" class="custom-control-input" id="autos" name="autos">
                       <label class="custom-control-label" for="autos">Seguro de Autos</label>
                       <div class="glyphicon glyphicon-info-sign"></div>
                     </div>
                 </div>
                 <div class="terminos col-md-4 col-md-offset-4">
-                  <input type="checkbox" class="custom-control-input" id="terminos">
+                  <input type="checkbox" class="custom-control-input" id="terminos" name="terminos">
                   <label class="custom-control-label" for="terminos">Acepto términos y condiciones</label>
                 </div>
                 <div class="datos col-md-4 col-md-offset-4">
-                  <input type="checkbox" class="custom-control-input" id="datos">
+                  <input type="checkbox" class="custom-control-input" id="datos" name="datos">
                   <label class="custom-control-label" for="datos">Acepto tratamiento de datos</label>
                 </div>
                 <div class="datos col-md-4 col-md-offset-4">
                 {{ Form::button( 'Solicitar cotización', array('type' => 'submit', 'class' => 'btn btn-primary bg-allianz' )) }}
                 </div>
-                </form>
-
+                {{ Form::close() }}
             </div>
         </div>
         <div class="col-md-5 nopadding">
