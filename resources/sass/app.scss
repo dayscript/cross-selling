@@ -1,0 +1,136 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// FontAwesome
+@import 'node_modules/font-awesome/scss/font-awesome.scss';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+.bg-salud{
+	background-color: #40b7bd;
+	padding: 15px;
+	margin-bottom: 12px;
+	color: #ffffff;
+}
+.bg-vida{
+	background-color: #2a9a4c;
+	padding: 15px;
+	margin-bottom: 12px;
+	color: #ffffff;
+}
+.bg-hogar{
+	background-color: #e0208f;
+	padding: 15px;
+	margin-bottom: 12px;
+	color: #ffffff;
+}
+.bg-autos{
+	background-color: #c91f3a;
+	padding: 15px;
+	margin-bottom: 16px;
+	color: #ffffff;
+}
+.spacing-button{
+	margin: 12px 0 60px 0;
+}
+
+.bg-allianz{
+	background-color: #0e2060 !important;
+	border-color: #0e2060 !important;
+	border-radius: 0px !important;
+	padding: 2rem 1rem !important;
+	font-weight: bolder !important;
+}
+
+.bg-allianz:hover{
+	background-color: #0e2060bf !important;
+}
+
+.text-allianz{
+	color: #193781;
+}
+
+.border-checkbox{
+	position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+
+.section-left{
+	padding: 0px;
+	display : flex;
+	justify-content : center;
+	align-items : center;
+	/*background-color:#3d231b;*/
+	height : 100%;
+	/*color : #FFF;*/
+}
+
+.section-right{
+	padding: 0px;
+	display : flex;
+	justify-content : center;
+	align-items : center;
+	background-color:#FFF;
+	height : 100%;
+	color : #3d231b;
+}
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+.checkbox-salud{
+	border: 1px solid #40b7bd;
+    padding: 15px;
+	margin: 15px;
+}
+.custom-control-label::before{
+	width: 2rem;
+    height: 2rem;
+    left: -3.5rem;
+}
+.custom-control-label::after{
+	width: 2rem;
+    height: 2rem;
+    left: -3.5rem;
+}
+
+.checkbox-vida{
+	border: 1px solid #2a9a4c;
+    padding: 15px;
+    margin: 15px;
+}
+.checkbox-hogar{
+	border: 1px solid #e0208f;
+    padding: 15px;
+    margin: 15px;
+}
+.checkbox-autos{
+	border: 1px solid #40b7bd;
+    padding: 15px;
+    margin: 15px;
+}
+
+.terminos{
+	margin: 15px 0;
+}
+
+.datos{
+	margin: 15px 0;
+}
+
+button.bg-allianz{
+	font-size: 18px;
+	padding: 1rem 4rem !important;
+}
