@@ -22,12 +22,6 @@ class ContactsController extends Controller
         }else{
             abort(404);
         }
-        //if (is_null($data)) {
-        //    return 'Es nulo';
-        //}else{
-        //return view('welcome')->with('data', $contact);
-        //}
-        //return view('allianz_aliado_experto');
     }
 
     /**
@@ -83,9 +77,8 @@ class ContactsController extends Controller
      */
     public function update(Request $request, Contacts $contacts)
     {
-        dd($request->all());
-        //dd($request);
-        //dd($request);
+        //dd($request->all());
+        dd($request);
     }
 
     /**
