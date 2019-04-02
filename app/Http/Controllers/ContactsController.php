@@ -77,10 +77,10 @@ class ContactsController extends Controller
     public function update(Request $request, Contacts $contacts)
     {
         $request->validate([
-            'salud' => 'required_without_all: salud, vida, hogar, autos',
+/*            'salud' => 'required_without_all: salud, vida, hogar, autos',
             'vida' => 'required_without_all: salud, vida, hogar, autos',
             'hogar' => 'required_without_all: salud, hogar, vida, autos',
-            'autos' => 'required_without_all: salud, vida, hogar, autos', 
+            'autos' => 'required_without_all: salud, vida, hogar, autos', */
             'terminos_condiciones' => 'required',
         ]);
 
