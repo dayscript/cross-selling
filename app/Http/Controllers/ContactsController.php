@@ -85,7 +85,7 @@ class ContactsController extends Controller
             //remitente
             $message->from($request->correo, $request->nombres);
             //asunto
-            $message->subject('Solicitud Cross Selling');
+            $message->subject('Nueva solicitud de seguro');
             //receptor
             $message->to($request->correo_director, $request->director);
         });
