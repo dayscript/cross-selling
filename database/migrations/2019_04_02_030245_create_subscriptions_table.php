@@ -26,7 +26,6 @@ class CreateSubscriptionsTable extends Migration
             $table->boolean('hogar')->nullable();
             $table->boolean('autos')->nullable();
             $table->boolean('terminos_condiciones');
-            $table->boolean('tratamiento_datos');
             $table->timestamps();
         });
     }

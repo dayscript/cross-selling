@@ -4,10 +4,25 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+import $ from 'jquery';
+window.$ = window.jQuery = $;
+
+$(document).ready(()=>{
+    $('#terminos').on('change', function() {
+            if ($(this).is(':checked') ) {
+                console.log('O');
+                $( "#enviar" ).prop( "disabled", false );
+            }else{
+                $( "#enviar" ).prop( "disabled", true );
+            }
+    });
+})
 
 require('./bootstrap');
 
 window.Vue = require('vue');
+
+
 
 /**
  * The following block of code may be used to automatically register your
