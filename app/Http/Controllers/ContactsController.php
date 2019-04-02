@@ -83,7 +83,8 @@ class ContactsController extends Controller
         $data = $request->all();
         $Subscriptions->fill($data);
         $Subscriptions->save();
-        return Redirect::route('home', array($Subscriptions->id));
+        return view('gracias')->with('message', 'Gracias por registrarte');
+        //return Redirect::route('home', array($Subscriptions->id));
 
     }
 
@@ -110,7 +111,7 @@ class ContactsController extends Controller
 
     public function import()
     {
-        $filename = public_path().'/name-file.csv';
+        $filename = public_path().'/users-sin-duplicados-1.csv';
         $delimiter = ';';
         if (!file_exists($filename) || !is_readable($filename))
             return false;
