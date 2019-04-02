@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Contacts;
+use App\Subscriptions;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class ContactsController extends Controller
 {
@@ -77,8 +79,12 @@ class ContactsController extends Controller
      */
     public function update(Request $request, Contacts $contacts)
     {
-        //dd($request->all());
-        dd($request);
+        $Subscriptions = new Subscriptions;
+        $data = $request->all();
+        $Subscriptions->fill($data);
+        $Subscriptions->save();
+        return Redirect::route('home', array($Subscriptions->id));
+
     }
 
     /**

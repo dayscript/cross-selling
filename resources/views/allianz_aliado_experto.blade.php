@@ -11,40 +11,46 @@
                     <p><strong>Selecciona los productos que quieres cotizar</strong></p>
                 </div>
                 {{ Form::open(array('route' => 'allianz.aliado.update', $contact->id_tomador)) }}
+                <input type="hidden" name="tipo_documento" value="{{ $contact->tipo_documento }}">
+                <input type="hidden" name="cedula" value="{{ $contact->id_tomador }}">
+                <input type="hidden" name="nombres" value="{{ $contact->nombres }}">
+                <input type="hidden" name="apellidos" value="{{ $contact->apellidos }}">
+                <input type="hidden" name="celular" value="{{ $contact->celular }}">
+                <input type="hidden" name="correo" value="{{ $contact->correo }}">
                 <div class="checkbox-salud col-md-4 col-md-offset-4">
                     <div class="custom-control custom-checkbox input-group-prepend">
-                      <input type="checkbox" class="custom-control-input" id="salud" name="salud">
+                      <input type="checkbox" class="custom-control-input" id="salud" name="salud" value="1">
                       <label class="custom-control-label" for="salud">Seguro de Salud</label>
                       <div class="glyphicon glyphicon-info-sign"></div>
                     </div>
                 </div>
                 <div class="checkbox-vida col-md-4 col-md-offset-4">
                     <div class="custom-control custom-checkbox input-group-prepend">
-                      <input type="checkbox" class="custom-control-input" id="vida" name="vida">
+                      <input type="checkbox" class="custom-control-input" id="vida" name="vida" value="1">
                       <label class="custom-control-label" for="vida">Seguro de Vida</label>
                       <div class="glyphicon glyphicon-info-sign"></div>
                     </div>
                 </div>
                 <div class="checkbox-hogar col-md-4 col-md-offset-4">
                     <div class="custom-control custom-checkbox input-group-prepend">
-                      <input type="checkbox" class="custom-control-input" id="hogar" name="hogar">
+                      <input type="checkbox" class="custom-control-input" id="hogar" name="hogar" value="1">
                       <label class="custom-control-label" for="hogar">Seguro de Hogar</label>
                       <div class="glyphicon glyphicon-info-sign"></div>
                     </div>
                 </div>
                 <div class="checkbox-autos col-md-4 col-md-offset-4">
                     <div class="custom-control custom-checkbox input-group-prepend">
-                      <input type="checkbox" class="custom-control-input" id="autos" name="autos">
+                      <input type="checkbox" class="custom-control-input" id="autos" name="autos" value="1">
                       <label class="custom-control-label" for="autos">Seguro de Autos</label>
                       <div class="glyphicon glyphicon-info-sign"></div>
                     </div>
                 </div>
                 <div class="terminos col-md-4 col-md-offset-4">
-                  <input type="checkbox" class="custom-control-input" id="terminos" name="terminos">
+                  <input type="checkbox" class="custom-control-input" id="terminos" name="terminos_condiciones" value="1">
                   <label class="custom-control-label" for="terminos">Acepto términos y condiciones</label>
                 </div>
                 <div class="datos col-md-4 col-md-offset-4">
-                  <input type="checkbox" class="custom-control-input" id="datos" name="datos">
+                  <input type="checkbox" class="custom-control-input" id="datos" name="tratamiento_datos" value="1">
                   <label class="custom-control-label" for="datos">Acepto tratamiento de datos</label>
                 </div>
                 <div class="datos col-md-4 col-md-offset-4">
