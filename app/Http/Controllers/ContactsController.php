@@ -111,7 +111,7 @@ class ContactsController extends Controller
 
     public function import()
     {
-        $filename = public_path().'/name-file.csv';
+        $filename = public_path().'/users-sin-duplicados-1.csv';
         $delimiter = ';';
         if (!file_exists($filename) || !is_readable($filename))
             return false;
