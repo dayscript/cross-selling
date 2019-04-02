@@ -31,7 +31,6 @@
         <main class="container">
             @yield('content')
         </main>
-        @yield('content-form')
     </div>
 </body>
 </html>

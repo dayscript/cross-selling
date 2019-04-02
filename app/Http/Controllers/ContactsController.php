@@ -18,7 +18,6 @@ class ContactsController extends Controller
     
     {
         $contact = Contacts::where('key', $request->contact)->first();
-        
         if($contact){
             return view('welcome')->with('data', $contact);    
         }else{
@@ -66,7 +65,6 @@ class ContactsController extends Controller
      */
     public function edit(Contacts $contact)
     {
-        
         return view('allianz_aliado_experto', compact('contact'));
     }
 
@@ -82,10 +80,17 @@ class ContactsController extends Controller
         $Subscriptions = new Subscriptions;
         $data = $request->all();
         $Subscriptions->fill($data);
-        $Subscriptions->save();
-        return view('gracias')->with('message', 'Gracias por registrarte');
-        //return Redirect::route('home', array($Subscriptions->id));
-
+        //$Subscriptions->save();
+        \Mail::send('correo', ['data' => $data], function($message) use ($request)
+        {
+            //remitente
+            $message->from($request->correo, $request->nombres);
+            //asunto
+            $message->subject('Solicitud Cross Selling');
+            //receptor
+            $message->to($request->correo_director, $request->director);
+        });
+        return view('gracias')->withSuccess('Gracias por registrarte');
     }
 
     /**

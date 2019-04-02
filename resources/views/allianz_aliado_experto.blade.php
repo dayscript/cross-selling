@@ -1,6 +1,4 @@
 @extends('layouts.app')
-
-@section('content-form')
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-7 nopadding">
@@ -17,6 +15,8 @@
                 <input type="hidden" name="apellidos" value="{{ $contact->apellidos }}">
                 <input type="hidden" name="celular" value="{{ $contact->celular }}">
                 <input type="hidden" name="correo" value="{{ $contact->correo }}">
+                <input type="hidden" name="director" value="{{ $contact->director }}">
+                <input type="hidden" name="correo_director" value="{{ $contact->correo_director }}">
                 <div class="checkbox-salud col-md-4 col-md-offset-4">
                     <div class="custom-control custom-checkbox input-group-prepend">
                       <input type="checkbox" class="custom-control-input" id="salud" name="salud" value="1">
@@ -199,4 +199,3 @@
         </div>
     </div>
 </div> -->
-@endsection
