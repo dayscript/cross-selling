@@ -43,7 +43,7 @@
                 <div class="row justify-content-center spacing-button">
                     <div class="col-lg-6 col-md-6 col-xs-12">
                         @if (isset($data->id_tomador))
-                        <a href="{{ route('allianz.aliado.experto', ['contact' => $data->id]) }}" class="btn btn-primary btn-lg btn-block bg-allianz">
+                        <a href="{{ route('allianz.aliado.experto', ['contact' => $data->key]) }}" class="btn btn-primary btn-lg btn-block bg-allianz">
                         Quiero saber más</a>
                         @endif
                     </div>

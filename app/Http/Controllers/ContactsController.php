@@ -15,7 +15,6 @@ class ContactsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
-    
     {
         $contact = Contacts::where('key', $request->contact)->first();
         if($contact){
@@ -80,7 +79,7 @@ class ContactsController extends Controller
         $Subscriptions = new Subscriptions;
         $data = $request->all();
         $Subscriptions->fill($data);
-        //$Subscriptions->save();
+        $Subscriptions->save();
         \Mail::send('correo', ['data' => $data], function($message) use ($request)
         {
             //remitente

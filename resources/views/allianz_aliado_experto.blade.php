@@ -1,9 +1,9 @@
 @extends('layouts.app')
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-7 nopadding">
+        <div class="col-md-7 nopadding align-self-center">
             <div class="text-center">
-                <div>
+                <div class="col-md-12">
                     <h4 class="text-allianz"><strong>Allianz es el aliado experto</strong></h4>
                     <p>Para ofrecerte el respaldo necesario para cuidar a los que amas, tu salud y tu patrimonio.</p>
                     <p><strong>Selecciona los productos que quieres cotizar</strong></p>
@@ -59,7 +59,7 @@
                 {{ Form::close() }}
             </div>
         </div>
-        <div class="col-md-5 nopadding">
+        <div class="col-md-5 nopadding h-100">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
