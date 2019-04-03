@@ -76,18 +76,28 @@ class ContactsController extends Controller
      */
     public function update(Request $request, Contacts $contacts)
     {
+        if (!isset($request->salud) && !isset($request->vida) && !isset($request->hogar) && !isset($request->autos)) {
+           $request->validate([
+                'salud' => 'required',
+                'terminos_condiciones' => 'required',
+            ],
+            [
+                'salud.required' => 'Debe seleccionar por lo menos un producto de su interes',
+                'terminos_condiciones.required' => 'Debe aceptar los términos y condiciones'
+            ]
+            );
+        }
         $request->validate([
-/*            'salud' => 'required_without_all: salud, vida, hogar, autos',
-            'vida' => 'required_without_all: salud, vida, hogar, autos',
-            'hogar' => 'required_without_all: salud, hogar, vida, autos',
-            'autos' => 'required_without_all: salud, vida, hogar, autos', */
             'terminos_condiciones' => 'required',
+        ],
+        [
+            'terminos_condiciones.required' => 'Debe aceptar los términos y condiciones'
         ]);
 
         $subscriptions = new Subscriptions;
         $data = $request->all();
         $subscriptions->fill($data);
-        $subscriptions->save();
+        //$subscriptions->save();
         \Mail::send('correo', ['data' => $data], function($message) use ($request)
         {
             //remitente

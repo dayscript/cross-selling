@@ -18,7 +18,7 @@
                     <p>Para ofrecerte el respaldo necesario para cuidar a los que amas, tu salud y tu patrimonio.</p>
                     <p><strong>Selecciona los productos que quieres cotizar</strong></p>
                 </div>
-                {{ Form::open(array('route' => 'allianz.aliado.update')) }}
+                {{ Form::open(array('name' => 'form', 'route' => 'allianz.aliado.update')) }}
                 <input type="hidden" name="tipo_documento" value="{{ $contact->tipo_documento }}">
                 <input type="hidden" name="cedula" value="{{ $contact->cedula }}">
                 <input type="hidden" name="nombres" value="{{ $contact->nombres }}">
@@ -57,7 +57,7 @@
                 </div>
                 <div class="terminos col-md-4 col-md-offset-4">
                   <input type="checkbox" class="custom-control-input" id="terminos" name="terminos_condiciones" value="1">
-                  <label class="custom-control-label" for="terminos">Acepto términos y condiciones</label>
+                  <label class="custom-control-label" for="terminos"><a href="https://www.allianz.co/legales/politica-proteccion-datos/" target="_blank">Acepto términos y condiciones</a></label>
                 </div>
                 <div class="datos col-md-4 col-md-offset-4">
                 {{ Form::button( 'Solicitar cotización', array('type' => 'submit', 'name' => 'enviar', 'id' => 'enviar', 'class' => 'btn btn-primary bg-allianz', 'disabled' => 'disabled')) }}
