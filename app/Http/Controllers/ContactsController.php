@@ -82,20 +82,20 @@ class ContactsController extends Controller
                 'terminos_condiciones' => 'required',
             ],
             [
-                'salud.required' => 'Debe seleccionar por lo menos un producto de su interes',
+                'salud.required' => 'Selecciona por lo menos un producto que sea de tu interés',
                 'terminos_condiciones.required' => 'Debe aceptar los términos y condiciones'
             ]
             );
         }
         $user = Subscriptions::where('cedula', '=', $request->cedula)->first();
         if (isset($user)) {
-            return view('gracias')->with('success','Ya haz enviado esta información, en cualquier momento un asesor se comunicara contigo.');
+            return view('gracias')->with('success','Tu información ya ha sido enviada, en cualquier momento un asesor se comunicará contigo.');
         }else{
             $request->validate([
                 'terminos_condiciones' => 'required',
             ],
             [
-                'terminos_condiciones.required' => 'Debe aceptar los términos y condiciones'
+                'terminos_condiciones.required' => 'Para poder continuar debes aceptar los términos y condiciones'
             ]);
             $subscriptions = new Subscriptions;
             $data = $request->all();
@@ -110,7 +110,7 @@ class ContactsController extends Controller
                 //receptor
                 $message->to($request->correo_director, $request->director);
             });
-            return view('gracias')->withSuccess('Gracias por registrarte, en un momento un asesor se comunicara contigo.');
+            return view('gracias')->withSuccess('Registro exitoso, en un momento un asesor se comunicará contigo.');
         }
     }
 

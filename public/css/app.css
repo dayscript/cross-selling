@@ -13715,28 +13715,28 @@ a.text-dark:focus {
 
 .bg-salud {
   background-color: #40b7bd;
-  padding: 15px;
+  padding: 40px;
   margin-bottom: 12px;
   color: #ffffff;
 }
 
 .bg-vida {
   background-color: #2a9a4c;
-  padding: 15px;
+  padding: 40px;
   margin-bottom: 12px;
   color: #ffffff;
 }
 
 .bg-hogar {
   background-color: #e0208f;
-  padding: 15px;
+  padding: 40px;
   margin-bottom: 12px;
   color: #ffffff;
 }
 
 .bg-autos {
   background-color: #c91f3a;
-  padding: 15px;
+  padding: 40px;
   margin-bottom: 16px;
   color: #ffffff;
 }
@@ -13774,9 +13774,7 @@ a.text-dark:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  /*background-color:#3d231b;*/
   height: 100%;
-  /*color : #FFF;*/
 }
 
 .section-right {
@@ -13794,52 +13792,138 @@ a.text-dark:focus {
   margin: 0 !important;
 }
 
-.checkbox-salud {
-  border: 1px solid #40b7bd;
-  padding: 15px;
-  margin: 15px;
-}
-
 .custom-control-label::before {
   width: 2rem;
   height: 2rem;
-  left: -3.5rem;
+  left: 0;
 }
 
 .custom-control-label::after {
   width: 2rem;
   height: 2rem;
-  left: -3.5rem;
+  left: 0;
 }
 
-.checkbox-vida {
-  border: 1px solid #2a9a4c;
+.checkbox-group .custom-checkbox {
   padding: 15px;
-  margin: 15px;
+  margin: 10px;
+  width: 245px;
+  display: inline-block;
 }
 
-.checkbox-hogar {
-  border: 1px solid #e0208f;
-  padding: 15px;
-  margin: 15px;
+.checkbox-group .custom-checkbox label {
+  width: 180px;
+  font-weight: 100;
 }
 
-.checkbox-autos {
+.checkbox-salud .custom-checkbox {
   border: 1px solid #40b7bd;
-  padding: 15px;
-  margin: 15px;
+  /*    padding: 15px;
+  	margin: 15px;*/
+}
+
+.checkbox-vida .custom-checkbox {
+  border: 1px solid #2a9a4c;
+  /*    padding: 15px;
+      margin: 15px;*/
+}
+
+.checkbox-hogar .custom-checkbox {
+  border: 1px solid #e0208f;
+  /*    padding: 15px;
+      margin: 15px;*/
+}
+
+.checkbox-autos .custom-checkbox {
+  border: 1px solid #40b7bd;
+  /*    padding: 15px;
+      margin: 15px;*/
 }
 
 .terminos {
-  margin: 15px 0;
+  margin-bottom: 20px;
 }
 
-.datos {
-  margin: 15px 0;
+.terminos .custom-control-label::before {
+  top: -0.1rem;
+}
+
+.terminos a {
+  padding-left: 30px;
+  font-size: 12px;
+  font-weight: 100;
+  color: #193781;
 }
 
 button.bg-allianz {
   font-size: 18px;
   padding: 1rem 4rem !important;
+}
+
+.checkbox-salud label {
+  color: #40b7bd;
+}
+
+.checkbox-vida label {
+  color: #2a9a4c;
+}
+
+.checkbox-hogar label {
+  color: #e0208f;
+}
+
+.checkbox-autos label {
+  color: #40b7bd;
+}
+
+.checkbox-group label.custom-control-label {
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.checkbox-salud .glyphicon,
+.checkbox-vida .glyphicon,
+.checkbox-hogar .glyphicon,
+.checkbox-autos .glyphicon {
+  font-size: 24px;
+  padding: 0px 0px 0px 3px;
+  color: #9999;
+}
+
+.salud {
+  background-color: #40b7bd;
+}
+
+.vida {
+  background-color: #2a9a4c;
+}
+
+.hogar {
+  background-color: #e0208f;
+}
+
+.autos {
+  background-color: #c91f3a;
+}
+
+.aliado-experto p {
+  font-size: 16px;
+  padding: 0 14%;
+}
+
+.bg-salud span.glyphicon.glyphicon-ok {
+  padding: 0 10px 0 0;
+}
+
+.bg-vida span.glyphicon.glyphicon-ok {
+  padding: 0 10px 0 0;
+}
+
+.bg-hogar span.glyphicon.glyphicon-ok {
+  padding: 0 10px 0 0;
+}
+
+.bg-autos span.glyphicon.glyphicon-ok {
+  padding: 0 10px 0 0;
 }
 
