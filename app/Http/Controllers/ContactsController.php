@@ -97,7 +97,7 @@ class ContactsController extends Controller
         $subscriptions = new Subscriptions;
         $data = $request->all();
         $subscriptions->fill($data);
-        //$subscriptions->save();
+        $subscriptions->save();
         \Mail::send('correo', ['data' => $data], function($message) use ($request)
         {
             //remitente
