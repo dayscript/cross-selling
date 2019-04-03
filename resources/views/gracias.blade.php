@@ -3,6 +3,9 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-7 nopadding align-self-center">
+            @if(!empty($success))
+                <div class="alert alert-success text-center"> {{ $success }}</div>
+            @endif
             <div class="text-center">
             	<h3>Agradecemos la confianza que has depositado en nosotros</h3>
             	<p>Gracias por registrarte, pronto serás contactado por tu asesor de seguros Allianz.</p>

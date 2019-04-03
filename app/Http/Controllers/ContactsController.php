@@ -87,27 +87,31 @@ class ContactsController extends Controller
             ]
             );
         }
-        $request->validate([
-            'terminos_condiciones' => 'required',
-        ],
-        [
-            'terminos_condiciones.required' => 'Debe aceptar los términos y condiciones'
-        ]);
-
-        $subscriptions = new Subscriptions;
-        $data = $request->all();
-        $subscriptions->fill($data);
-        $subscriptions->save();
-        \Mail::send('correo', ['data' => $data], function($message) use ($request)
-        {
-            //remitente
-            $message->from($request->correo, $request->nombres);
-            //asunto
-            $message->subject('Nueva solicitud de seguro');
-            //receptor
-            $message->to($request->correo_director, $request->director);
-        });
-        return view('gracias')->withSuccess('Gracias por registrarte');
+        $user = Subscriptions::where('cedula', '=', $request->cedula)->first();
+        if (isset($user)) {
+            return view('gracias')->with('success','Ya haz enviado esta información, en cualquier momento un asesor se comunicara contigo.');
+        }else{
+            $request->validate([
+                'terminos_condiciones' => 'required',
+            ],
+            [
+                'terminos_condiciones.required' => 'Debe aceptar los términos y condiciones'
+            ]);
+            $subscriptions = new Subscriptions;
+            $data = $request->all();
+            $subscriptions->fill($data);
+            $subscriptions->save();
+            \Mail::send('correo', ['data' => $data], function($message) use ($request)
+            {
+                //remitente
+                $message->from($request->correo, $request->nombres);
+                //asunto
+                $message->subject('Nueva solicitud de seguro');
+                //receptor
+                $message->to($request->correo_director, $request->director);
+            });
+            return view('gracias')->withSuccess('Gracias por registrarte, en un momento un asesor se comunicara contigo.');
+        }
     }
 
     /**
