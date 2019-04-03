@@ -84,10 +84,10 @@ class ContactsController extends Controller
             'terminos_condiciones' => 'required',
         ]);
 
-        $Subscriptions = new Subscriptions;
+        $subscriptions = new Subscriptions;
         $data = $request->all();
-        $Subscriptions->fill($data);
-        $Subscriptions->save();
+        $subscriptions->fill($data);
+        $subscriptions->save();
         \Mail::send('correo', ['data' => $data], function($message) use ($request)
         {
             //remitente
@@ -123,7 +123,7 @@ class ContactsController extends Controller
 
     public function import()
     {
-        $filename = public_path().'/users-sin-duplicados-5.csv';
+        $filename = public_path().'/test.csv';
         $delimiter = ';';
         if (!file_exists($filename) || !is_readable($filename))
             return false;
@@ -141,31 +141,33 @@ class ContactsController extends Controller
             }
             fclose($handle);
         }
-        foreach ($data as $key => $data2){
+        foreach ($data as $key => $value){
             $contacts = Contacts::firstOrCreate(
                                         [
                                         'key' => str_random(8),
-                                        'nombre' => $data2['nombre'],
-                                        'tipo_documento' => $data2['tipo_documento'],
-                                        'id_tomador' => $data2['id_tomador'],
-                                        'celular' => $data2['celular'],
-                                        'correo' => $data2['correo'],
-                                        'director' => $data2['director'],
-                                        'celular_director' => $data2['celular_director'],
-                                        'correo_director' => $data2['correo_director'],
-                                        'envio_form' => '0',
+                                        'tipo_documento' => $value['tipo_documento'],
+                                        'cedula' => $value['cedula'],
+                                        'nombres' => $value['nombres'],
+                                        'apellidos' => $value['apellidos'],
+                                        'celular' => $value['celular'],
+                                        'correo' => $value['correo'],
+                                        'nomage' => $value['nomage'],
+                                        'director' => $value['director'],
+                                        'celular_director' => $value['celular_director'],
+                                        'correo_director' => $value['correo_director'],
                                         ]
                                     );
             $contacts->key = str_random(8);
-            $contacts->nombre = $data2['nombre'];
-            $contacts->tipo_documento = $data2['tipo_documento'];
-            $contacts->id_tomador = $data2['id_tomador'];
-            $contacts->celular = $data2['celular'];
-            $contacts->correo = $data2['correo'];
-            $contacts->director = $data2['director'];
-            $contacts->celular_director = $data2['celular_director'];
-            $contacts->correo_director = $data2['correo_director'];
-            $contacts->envio_form = 0;
+            $contacts->tipo_documento = $value['tipo_documento'];
+            $contacts->cedula = $value['cedula'];
+            $contacts->nombres = $value['nombres'];
+            $contacts->apellidos = $value['apellidos'];
+            $contacts->celular = $value['celular'];
+            $contacts->correo = $value['correo'];
+            $contacts->nomage = $value['nomage'];
+            $contacts->director = $value['director'];
+            $contacts->celular_director = $value['celular_director'];
+            $contacts->correo_director = $value['correo_director'];
             $contacts->save();
         }
     }

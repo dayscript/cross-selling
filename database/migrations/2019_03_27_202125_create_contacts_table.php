@@ -17,14 +17,15 @@ class CreateContactsTable extends Migration
             $table->bigIncrements('id');
             $table->string('key', 8);
             $table->string('tipo_documento');
-            $table->string('id_tomador')->unique();
-            $table->string('nombre');
+            $table->string('cedula')->unique();
+            $table->string('nombres');
+            $table->string('apellidos')->nullable();
             $table->string('celular')->nullable();
             $table->string('correo')->nullable();
+            $table->string('nomage');
             $table->string('director');
             $table->string('celular_director');
             $table->string('correo_director');
-            $table->boolean('envio_form');
             $table->timestamps();
         });
     }

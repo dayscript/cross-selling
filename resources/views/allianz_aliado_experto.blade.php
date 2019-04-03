@@ -20,8 +20,8 @@
                 </div>
                 {{ Form::open(array('route' => 'allianz.aliado.update')) }}
                 <input type="hidden" name="tipo_documento" value="{{ $contact->tipo_documento }}">
-                <input type="hidden" name="cedula" value="{{ $contact->id_tomador }}">
-                <input type="hidden" name="nombres" value="{{ $contact->nombre }}">
+                <input type="hidden" name="cedula" value="{{ $contact->cedula }}">
+                <input type="hidden" name="nombres" value="{{ $contact->nombres }}">
                 <input type="hidden" name="apellidos" value="{{ $contact->apellidos }}">
                 <input type="hidden" name="celular" value="{{ $contact->celular }}">
                 <input type="hidden" name="correo" value="{{ $contact->correo }}">
