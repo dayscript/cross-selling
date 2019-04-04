@@ -18,6 +18,33 @@ $(document).ready(()=>{
     });
 })
 
+$(document).ready(()=>{
+  //FIJAR BOTON 
+  if ($(window).width() <= 576) $('#enviar').addClass('fixed-bottom w-100');
+  else $('#enviar').removeClass('fixed-bottom w-100');
+
+  //OCULAR EL SLIDER
+  if ($(window).width() <= 576) $('#slider').addClass('d-none');
+  else $('#slider').removeClass('d-none');
+
+  //MUESTRA EL PORTAFOLIO
+  if ($(window).width() > 576) $('#portafolio').addClass('d-none');
+  else $('#portafolio').removeClass('d-block');
+
+  //MUESTRA LOS BOTONES PARA LAS ANCLAS
+  if ($(window).width() > 576) $('.display-buttons').addClass('d-none');
+  else $('.display-buttons').removeClass('d-block');
+
+  //OCULTA BOTONES DE LOS CONTROLES DEL SLIDE
+  if ($(window).width() <= 576) $('.hidden-buttons').addClass('d-none');
+  else $('.hidden-buttons').removeClass('d-block');
+
+  //
+  if ($(window).width() > 576) $('.jump-to-start').addClass('d-none');
+  else $('.hidden-buttons').removeClass('d-block');
+
+});
+
 require('./bootstrap');
 
 window.Vue = require('vue');

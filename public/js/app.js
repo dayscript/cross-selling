@@ -49025,6 +49025,20 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     }
   });
 });
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+  //FIJAR BOTON 
+  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() <= 576) jquery__WEBPACK_IMPORTED_MODULE_0___default()('#enviar').addClass('fixed-bottom w-100');else jquery__WEBPACK_IMPORTED_MODULE_0___default()('#enviar').removeClass('fixed-bottom w-100'); //OCULAR EL SLIDER
+
+  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() <= 576) jquery__WEBPACK_IMPORTED_MODULE_0___default()('#slider').addClass('d-none');else jquery__WEBPACK_IMPORTED_MODULE_0___default()('#slider').removeClass('d-none'); //MUESTRA EL PORTAFOLIO
+
+  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() > 576) jquery__WEBPACK_IMPORTED_MODULE_0___default()('#portafolio').addClass('d-none');else jquery__WEBPACK_IMPORTED_MODULE_0___default()('#portafolio').removeClass('d-block'); //MUESTRA LOS BOTONES PARA LAS ANCLAS
+
+  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() > 576) jquery__WEBPACK_IMPORTED_MODULE_0___default()('.display-buttons').addClass('d-none');else jquery__WEBPACK_IMPORTED_MODULE_0___default()('.display-buttons').removeClass('d-block'); //OCULTA BOTONES DE LOS CONTROLES DEL SLIDE
+
+  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() <= 576) jquery__WEBPACK_IMPORTED_MODULE_0___default()('.hidden-buttons').addClass('d-none');else jquery__WEBPACK_IMPORTED_MODULE_0___default()('.hidden-buttons').removeClass('d-block'); //
+
+  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() > 576) jquery__WEBPACK_IMPORTED_MODULE_0___default()('.jump-to-start').addClass('d-none');else jquery__WEBPACK_IMPORTED_MODULE_0___default()('.hidden-buttons').removeClass('d-block');
+});
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
