@@ -13959,3 +13959,12 @@ button.bg-allianz {
   margin-bottom: 59px;
 }
 
+#agradecimiento-logo {
+  margin-left: 30px;
+  padding-bottom: 30px;
+}
+
+#agradecimiento-logo > img {
+  width: 85%;
+}
+

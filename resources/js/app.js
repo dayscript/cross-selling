@@ -39,9 +39,17 @@ $(document).ready(()=>{
   if ($(window).width() <= 576) $('.hidden-buttons').addClass('d-none');
   else $('.hidden-buttons').removeClass('d-block');
 
-  //
+  //SALTAR ARRIBA
   if ($(window).width() > 576) $('.jump-to-start').addClass('d-none');
   else $('.hidden-buttons').removeClass('d-block');
+
+  //FIJAR BOTON AGRADECIMIENTO
+  if ($(window).width() <= 576) $('#ir-allianz').addClass('fixed-bottom w-100');
+  else $('#ir-allianz').removeClass('fixed-bottom w-100');
+
+  //FIJAR BOTON AGRADECIMIENTO
+  if ($(window).width() > 576) $('#agradecimiento-logo').addClass('position-absolute');
+  else $('#ir-allianz').removeClass('position-absolute');
 
 });
 

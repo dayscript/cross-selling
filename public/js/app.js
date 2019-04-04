@@ -49035,9 +49035,13 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
   if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() > 576) jquery__WEBPACK_IMPORTED_MODULE_0___default()('.display-buttons').addClass('d-none');else jquery__WEBPACK_IMPORTED_MODULE_0___default()('.display-buttons').removeClass('d-block'); //OCULTA BOTONES DE LOS CONTROLES DEL SLIDE
 
-  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() <= 576) jquery__WEBPACK_IMPORTED_MODULE_0___default()('.hidden-buttons').addClass('d-none');else jquery__WEBPACK_IMPORTED_MODULE_0___default()('.hidden-buttons').removeClass('d-block'); //
+  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() <= 576) jquery__WEBPACK_IMPORTED_MODULE_0___default()('.hidden-buttons').addClass('d-none');else jquery__WEBPACK_IMPORTED_MODULE_0___default()('.hidden-buttons').removeClass('d-block'); //SALTAR ARRIBA
 
-  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() > 576) jquery__WEBPACK_IMPORTED_MODULE_0___default()('.jump-to-start').addClass('d-none');else jquery__WEBPACK_IMPORTED_MODULE_0___default()('.hidden-buttons').removeClass('d-block');
+  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() > 576) jquery__WEBPACK_IMPORTED_MODULE_0___default()('.jump-to-start').addClass('d-none');else jquery__WEBPACK_IMPORTED_MODULE_0___default()('.hidden-buttons').removeClass('d-block'); //FIJAR BOTON AGRADECIMIENTO
+
+  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() <= 576) jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ir-allianz').addClass('fixed-bottom w-100');else jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ir-allianz').removeClass('fixed-bottom w-100'); //FIJAR BOTON AGRADECIMIENTO
+
+  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() > 576) jquery__WEBPACK_IMPORTED_MODULE_0___default()('#agradecimiento-logo').addClass('position-absolute');else jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ir-allianz').removeClass('position-absolute');
 });
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");

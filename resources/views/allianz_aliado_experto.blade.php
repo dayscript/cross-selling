@@ -2,6 +2,9 @@
 @section('content')
 <div class="container-fluid h-100" id="jump-to-start">
   <div class="row h-100">
+    <div class="" id="agradecimiento-logo">
+      <img class="d-block" src="{{ asset('logos/logo.png') }}">
+    </div>
     <div class="col-md-7 nopadding align-self-center">
       <div class="row text-center">
         @if ($errors->any())
