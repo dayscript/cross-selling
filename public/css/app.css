@@ -13757,6 +13757,12 @@ a.text-dark:focus {
   background-color: #0e2060bf !important;
 }
 
+.bg-allianz:disabled {
+  background-color: #9b9b9b !important;
+  border-color: #9b9b9b !important;
+  color: #000;
+}
+
 .text-allianz {
   color: #193781;
 }
@@ -13835,7 +13841,7 @@ a.text-dark:focus {
 }
 
 .checkbox-autos .custom-checkbox {
-  border: 1px solid #40b7bd;
+  border: 1px solid #c91f3a;
   /*    padding: 15px;
       margin: 15px;*/
 }
@@ -13873,7 +13879,7 @@ button.bg-allianz {
 }
 
 .checkbox-autos label {
-  color: #40b7bd;
+  color: #c91f3a;
 }
 
 .checkbox-group label.custom-control-label {

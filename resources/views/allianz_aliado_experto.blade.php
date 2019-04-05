@@ -5,7 +5,7 @@
     <div class="" id="agradecimiento-logo">
       <img class="d-block" src="{{ asset('logos/logo.png') }}">
     </div>
-    <div class="col-md-7 nopadding align-self-center">
+    <div class="col-md-8 nopadding align-self-center">
       <div class="row text-center">
         @if ($errors->any())
         <div class="alert alert-danger col-sm-12 text-center">
@@ -25,7 +25,7 @@
           </div>
       </div>
       <div class="row">
-        {{ Form::open(array('name' => 'form', 'route' => 'allianz.aliado.update')) }}
+        {{ Form::open(array('name' => 'form', 'route' => 'allianz.aliado.update', 'class' => 'col-md-12 text-center')) }}
         <input type="hidden" name="tipo_documento" value="{{ $contact->tipo_documento }}">
         <input type="hidden" name="cedula" value="{{ $contact->cedula }}">
         <input type="hidden" name="nombres" value="{{ $contact->nombres }}">
@@ -80,7 +80,7 @@
       <div class="row">
       </div>
     </div>
-    <div class="col-md-5 nopadding h-100" id="slider">
+    <div class="col-md-4 nopadding h-100" id="slider">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active h-100 salud">
