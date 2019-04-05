@@ -13715,28 +13715,28 @@ a.text-dark:focus {
 
 .bg-salud {
   background-color: #40b7bd;
-  padding: 40px;
+  padding: 25px;
   margin-bottom: 12px;
   color: #ffffff;
 }
 
 .bg-vida {
   background-color: #2a9a4c;
-  padding: 40px;
+  padding: 25px;
   margin-bottom: 12px;
   color: #ffffff;
 }
 
 .bg-hogar {
   background-color: #e0208f;
-  padding: 40px;
+  padding: 25px;
   margin-bottom: 12px;
   color: #ffffff;
 }
 
 .bg-autos {
   background-color: #c91f3a;
-  padding: 40px;
+  padding: 25px;
   margin-bottom: 16px;
   color: #ffffff;
 }
@@ -13973,5 +13973,10 @@ button.bg-allianz {
 
 #agradecimiento-logo > img {
   width: 85%;
+}
+
+#carouselExampleIndicators .carousel-control-prev,
+#carouselExampleIndicators .carousel-control-next {
+  bottom: 28% !important;
 }
 
