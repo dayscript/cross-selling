@@ -13708,6 +13708,10 @@ a.text-dark:focus {
   clip: auto;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -13760,7 +13764,7 @@ a.text-dark:focus {
 .bg-allianz:disabled {
   background-color: #9b9b9b !important;
   border-color: #9b9b9b !important;
-  color: #000;
+  color: #252525;
   opacity: 1 !important;
 }
 
@@ -13894,7 +13898,7 @@ button.bg-allianz {
 .checkbox-autos .glyphicon {
   font-size: 24px;
   padding: 0px 0px 0px 3px;
-  color: #9999;
+  color: #193781;
 }
 
 .salud {
