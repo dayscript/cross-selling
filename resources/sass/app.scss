@@ -118,6 +118,11 @@ html {
     height: 2rem;
     left: 0;
 }
+
+.terminos .custom-control-label::after{
+	top: 0;
+}
+
 .checkbox-group .custom-checkbox{
 	padding: 15px;
     margin: 10px;

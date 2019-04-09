@@ -68,9 +68,9 @@
               </div>
           </div>
         </div>
-        <div class="terminos col-sm-12 text-center">
+        <div class="terminos col-sm-12 text-center custom-checkbox">
           <input type="checkbox" class="custom-control-input" id="terminos" name="terminos_condiciones" value="1">
-          <label class="custom-control-label" for="terminos"><a href="https://www.allianz.co/legales/politica-proteccion-datos/" target="_blank">Acepto términos y condiciones</a></label>
+          <label class="custom-control-label" for="terminos"><a href="https://www.allianz.co/legales/politica-proteccion-datos/" target="_blank">Acepto la Política de Tratamiento<br>de Datos Personales</a></label>
         </div>
         <div class="datos col-sm-12 text-center">
           {{ Form::button( 'Solicitar cotización', array('type' => 'submit', 'name' => 'enviar', 'id' => 'enviar', 'class' => 'btn btn-primary bg-allianz', 'disabled' => 'disabled')) }}
