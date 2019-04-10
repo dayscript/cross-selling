@@ -137,7 +137,7 @@ class ContactsController extends Controller
 
     public function import()
     {
-        $filename = public_path().'/test.csv';
+        $filename = public_path().'/test-2.csv';
         $delimiter = ';';
         if (!file_exists($filename) || !is_readable($filename))
             return false;
@@ -156,6 +156,12 @@ class ContactsController extends Controller
             fclose($handle);
         }
         foreach ($data as $key => $value){
+            $contacts = Contacts::where('cedula', $value['cedula'], '=' )->get()->first();
+            $contacts->cedula_correcta = $value['cedula_correcta'];
+            $contacts->correo_agente = $value['correo_agente'];
+            $contacts->save();
+        }
+/*        foreach ($data as $key => $value){
             $contacts = Contacts::firstOrCreate(
                                         [
                                         'key' => str_random(8),
@@ -183,6 +189,6 @@ class ContactsController extends Controller
             $contacts->celular_director = $value['celular_director'];
             $contacts->correo_director = $value['correo_director'];
             $contacts->save();
-        }
+        }*/
     }
 }
