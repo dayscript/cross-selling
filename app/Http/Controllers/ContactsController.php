@@ -109,6 +109,7 @@ class ContactsController extends Controller
                 $message->subject('Nueva solicitud de seguro');
                 //receptor
                 $message->to($request->correo_director, $request->director);
+                $message->cc($request->correo_agente);
             });
             return view('gracias')->withSuccess('Registro exitoso, en un momento un asesor se comunicará contigo.');
         }

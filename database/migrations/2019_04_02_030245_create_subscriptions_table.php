@@ -21,11 +21,11 @@ class CreateSubscriptionsTable extends Migration
             $table->string('apellidos')->nullable();
             $table->string('celular')->nullable();
             $table->string('correo')->nullable();
-            $table->boolean('salud')->nullable();
-            $table->boolean('vida')->nullable();
-            $table->boolean('hogar')->nullable();
-            $table->boolean('autos')->nullable();
-            $table->boolean('terminos_condiciones');
+            $table->boolean('salud')->default('0');
+            $table->boolean('vida')->default('0');
+            $table->boolean('hogar')->default('0');
+            $table->boolean('autos')->default('0');
+            $table->boolean('terminos_condiciones')->default('0');
             $table->timestamps();
         });
     }

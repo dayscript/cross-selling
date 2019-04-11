@@ -26,15 +26,15 @@
       </div>
       <div class="row">
         {{ Form::open(array('name' => 'form', 'route' => 'allianz.aliado.update', 'class' => 'col-md-12 text-center')) }}
-        <input type="" name="tipo_documento" value="{{ $contact->tipo_documento }}">
-        <input type="" name="cedula" value="{{ $contact->cedula_correcta }}">
-        <input type="" name="nombres" value="{{ $contact->nombres }}">
-        <input type="" name="apellidos" value="{{ $contact->apellidos }}">
-        <input type="" name="celular" value="{{ $contact->celular }}">
-        <input type="" name="correo" value="{{ $contact->correo }}">
-        <input type="" name="correo_agente" value="{{ $contact->correo_agente }}">
-        <input type="" name="director" value="{{ $contact->director }}">
-        <input type="" name="correo_director" value="{{ $contact->correo_director }}">
+        <input type="hidden" name="tipo_documento" value="{{ $contact->tipo_documento }}">
+        <input type="hidden" name="cedula" value="{{ $contact->cedula_correcta }}">
+        <input type="hidden" name="nombres" value="{{ $contact->nombres }}">
+        <input type="hidden" name="apellidos" value="{{ $contact->apellidos }}">
+        <input type="hidden" name="celular" value="{{ $contact->celular }}">
+        <input type="hidden" name="correo" value="{{ $contact->correo }}">
+        <input type="hidden" name="correo_agente" value="{{ $contact->correo_agente }}">
+        <input type="hidden" name="director" value="{{ $contact->director }}">
+        <input type="hidden" name="correo_director" value="{{ $contact->correo_director }}">
         <div class="row">
           <div class="checkbox-salud checkbox-group col-sm-12 text-center">
               <div class="custom-control custom-checkbox input-group-prepend">
