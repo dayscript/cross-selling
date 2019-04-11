@@ -27,10 +27,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('data/import', 'ContactsController@import')->middleware('auth.basic');
 
-
-
-/*Route::get('data/import', function () {
-	return view('gracias');
-    // Only authenticated users may enter...
-
-})->middleware('auth.basic');*/
+Route::get('data/update', 'ContactsController@dataUpdate')->middleware('auth.basic');

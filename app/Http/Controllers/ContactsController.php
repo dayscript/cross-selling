@@ -156,12 +156,6 @@ class ContactsController extends Controller
             fclose($handle);
         }
         foreach ($data as $key => $value){
-            $contacts = Contacts::where('cedula', $value['cedula'], '=' )->get()->first();
-            $contacts->cedula_correcta = $value['cedula_correcta'];
-            $contacts->correo_agente = $value['correo_agente'];
-            $contacts->save();
-        }
-/*        foreach ($data as $key => $value){
             $contacts = Contacts::firstOrCreate(
                                         [
                                         'key' => str_random(8),
@@ -189,6 +183,33 @@ class ContactsController extends Controller
             $contacts->celular_director = $value['celular_director'];
             $contacts->correo_director = $value['correo_director'];
             $contacts->save();
-        }*/
+        }
+    }
+    public function dataUpdate()
+    {
+        $filename = public_path().'/test-2.csv';
+        $delimiter = ';';
+        if (!file_exists($filename) || !is_readable($filename))
+            return false;
+
+        $header = null;
+        $data = array();
+        if (($handle = fopen($filename, 'r')) !== false)
+        {
+            while (($row = fgetcsv($handle, 1000, $delimiter)) !== false)
+            {
+                if (!$header)
+                    $header = $row;
+                else
+                    $data[] = array_combine($header, $row);
+            }
+            fclose($handle);
+        }
+        foreach ($data as $key => $value){
+            $contacts = Contacts::where('cedula', $value['cedula'], '=' )->get()->first();
+            $contacts->cedula_correcta = $value['cedula_correcta'];
+            $contacts->correo_agente = $value['correo_agente'];
+            $contacts->save();
+        }
     }
 }
