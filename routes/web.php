@@ -28,3 +28,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('data/import', 'ContactsController@import')->middleware('auth.basic');
 
 Route::get('data/update', 'ContactsController@dataUpdate')->middleware('auth.basic');
+
+/*
+SMS
+*/
+
+Route::get('{contact}', 'ContactsController@edit')->name('sms');
