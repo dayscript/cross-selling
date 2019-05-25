@@ -34,3 +34,4 @@ SMS
 */
 
 Route::get('{contact}', 'ContactsController@edit')->name('sms');
+Route::get('sms/parse', 'SmsController@parse')->middleware('auth.basic')->name('sms.parse');
