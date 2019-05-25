@@ -105,16 +105,28 @@ class SmsController extends Controller
             fclose($handle);
         }
         foreach ($data as $key => $value){
-            //dd($value['cel']);
-            $username = urlencode('movilesinfraestructura@linkdigital.co');
-            $password = urlencode('%Kkk8T|rcQNA",7r/X:aN89!rzq$(n');
-            $api_id = urlencode('85HA9cIjSCOSJW1-e6mLZQ==');
-            $to = urlencode($value['key']);
-            $id = $value['key'];
-            $message = urlencode('Hola, PHP: http://allz.pw/'.'"$id"');
-            dd($message);
-            echo file_get_contents("https://api.clickatell.com/http/sendmsg"."?user=$username&password=$password&api_id=$api_id&to=$to&text=$message");
+            $username = 'movilesinfraestructura@linkdigital.co';
+            $password = '%Kkk8T|rcQNA",7r/X:aN89!rzq$(n';
+            $api_id = '85HA9cIjSCOSJW1-e6mLZQ==';
 
+            $to = urlencode($value['cel']);
+            $url = $value['url'];
+
+            $message = urlencode(utf8_decode("Asegúrate con Allianz !Conoce más seguros aquí¡ ")).$url;
+
+            $results =  file_get_contents("https://api.clickatell.com/http/sendmsg" . "?user=$username&password=$password&api_id=$api_id&to=$to&text=$message");
+
+            echo $results."<br>". "Cel: ".$value['cel']."<pre>";
+
+            //file_put_contents(public_path("results.csv"), file_get_contents("https://api.clickatell.com/http/sendmsg" . "?user=$username&password=$password&api_id=$api_id&to=$to&text=$message"));
+/*            $username = 'movilesinfraestructura@linkdigital.co';
+            $password = '%Kkk8T|rcQNA",7r/X:aN89!rzq$(n';
+            $api_id = '85HA9cIjSCOSJW1-e6mLZQ==';
+            $to = urlencode($value['cel']);
+            $url = $value['url'];
+            $message = 'Asegúrate con Allianz !Conoce más seguros aquí¡ '.$url;
+            echo file_get_contents("https://api.clickatell.com/http/sendmsg" . "?user=$username&password=$password&api_id=$api_id&to=$to&text=$message");
+*/
 /*        $ch = curl_init();
 
         // set URL and other appropriate options
