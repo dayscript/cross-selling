@@ -85,8 +85,7 @@ class SmsController extends Controller
 
     public function parse(Sms $sms)
     {
-        //dd($sms);
-        $filename = public_path().'/sms.csv';
+        $filename = public_path().'/sms/name.csv';
         $delimiter = ';';
         if (!file_exists($filename) || !is_readable($filename))
             return false;
@@ -112,33 +111,19 @@ class SmsController extends Controller
             $to = urlencode($value['cel']);
             $url = $value['url'];
 
-            $message = urlencode(utf8_decode("Asegúrate con Allianz !Conoce más seguros aquí¡ ")).$url;
+            $message = urlencode(utf8_decode("Allianz tiene informacion de interes acerca de tus seguros. Conoce mas aqui: ")).$url;
 
             $results =  file_get_contents("https://api.clickatell.com/http/sendmsg" . "?user=$username&password=$password&api_id=$api_id&to=$to&text=$message");
 
-            echo $results."<br>". "Cel: ".$value['cel']."<pre>";
-
-            //file_put_contents(public_path("results.csv"), file_get_contents("https://api.clickatell.com/http/sendmsg" . "?user=$username&password=$password&api_id=$api_id&to=$to&text=$message"));
-/*            $username = 'movilesinfraestructura@linkdigital.co';
-            $password = '%Kkk8T|rcQNA",7r/X:aN89!rzq$(n';
-            $api_id = '85HA9cIjSCOSJW1-e6mLZQ==';
-            $to = urlencode($value['cel']);
-            $url = $value['url'];
-            $message = 'Asegúrate con Allianz !Conoce más seguros aquí¡ '.$url;
-            echo file_get_contents("https://api.clickatell.com/http/sendmsg" . "?user=$username&password=$password&api_id=$api_id&to=$to&text=$message");
-*/
-/*        $ch = curl_init();
-
-        // set URL and other appropriate options
-        curl_setopt($ch, CURLOPT_URL, "http://www.example.com/");
-        dd($ch);
-        curl_setopt($ch, CURLOPT_HEADER, 0);
-
-        // grab URL and pass it to the browser
-        curl_exec($ch);
-
-        // close cURL resource, and free up system resources
-        curl_close($ch);*/
+            echo $results;
+            echo '<div style="border: 1px solid;">';
+            print_r($value['url']);
+            echo  '<br>';
+            print_r($value['cel']);
+            echo  '<br>';
+            print_r($results);
+            echo  '<br>';
+            echo '</div>';
         }
     }
 }
